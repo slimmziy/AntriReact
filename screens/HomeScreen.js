@@ -2,12 +2,13 @@ import * as WebBrowser from "expo-web-browser";
 import React, { Component } from "react";
 import {
   Image,
-  Platform,
   ScrollView,
   Dimensions,
   Text,
   TouchableOpacity,
-  View
+  View,
+  FlatList,
+  ActivityIndicator
 } from "react-native";
 
 import styles from "../style/style";
@@ -20,46 +21,45 @@ import { HeaderTitle } from "react-navigation-stack";
 
 const { height, width } = Dimensions.get("window");
 
+
+
 class HomeScreen extends Component {
+
+  constructor(props){
+    super(props);
+    this.state ={ isLoading: true}
+  }
+  
   componentDidMount() {
-    return fetch("http://localhost:3333/merchants")
-      .then(response => response.json())
-      .then(responseJson => {
-        this.setState(
-          {
-            isLoading: false,
-            dataSource: responseJson
-          },
-          function() {
-            // In this block you can do something with new state.
-          }
-        );
+
+    return fetch('https://jsonplaceholder.typicode.com/posts')
+      .then((response) => response.json())
+      .then((responseJson) => {
+
+        this.setState({
+          isLoading: false,
+          dataSource: responseJson,
+        }, function(){
+
+        });
+
       })
-      .catch(error => {
+      .catch((error) =>{
         console.error(error);
       });
   }
 
-  FlatListItemSeparator = () => {
-    return (
-      <View
-        style={{
-          height: 1,
-          width: "100%",
-          backgroundColor: "#607D8B"
-        }}
-      />
-    );
-  };
+  
 
   render() {
-    if (this.state.isLoading) {
-      return (
-        <View style={{ flex: 1, paddingTop: 20 }}>
-          <ActivityIndicator />
+    if(this.state.isLoading){
+      return(
+        <View style={{flex: 1, padding: 20}}>
+          <ActivityIndicator/>
         </View>
-      );
+      )
     }
+
     return (
       <View style={styles.container}>
         <ScrollView scrollEventThrotle={16}>
@@ -68,7 +68,15 @@ class HomeScreen extends Component {
               <Text style={styles.heading}>ANTRIAN TERAKHIR</Text>
             </View>
 
-            <FlatList
+            <View style={{flex: 1, paddingTop:20}}>
+        <FlatList
+          data={this.state.dataSource}
+          renderItem={({item}) => <Text>{item.title}, {item.body}</Text>}
+          keyExtractor={({id}, index) => id}
+        />
+      </View>
+
+            {/* <FlatList
               data={this.state.dataSource}
               ItemSeparatorComponent={this.FlatListItemSeparator}
               renderItem={({ item }) => (
@@ -81,7 +89,7 @@ class HomeScreen extends Component {
                 </Text>
               )}
               keyExtractor={(item, index) => index}
-            />
+            /> */}
 
             <View style={{ height: 130, marginTop: 20 }}>
               <ScrollView
