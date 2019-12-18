@@ -11,6 +11,12 @@ export default StyleSheet.create({
     fontWeight: "500"
   },
 
+  headingCenter: {
+    fontSize: 18,
+    fontWeight: "500",
+    textAlign: 'center'
+  },
+
   semiHeading: {
     fontSize: 18,
     fontWeight: "700"

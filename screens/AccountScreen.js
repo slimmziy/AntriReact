@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import {
     View,
-    Text,
-    StyleSheet,
-    Image,
     Button,
-    TouchableHighlight
+    AsyncStorage,
 } from 'react-native';
 
 import styles from '../style/style';
@@ -32,13 +29,25 @@ class AccountScreen extends Component {
                         </View>
                     </TouchableHighlight>
                 </View> */}
+                
+                <View style={{marginLeft: 20, marginRight: 20}}>
+                    <Button title="Keluar"
+                        onPress={_ => this._signOutAsync()}/>
+                </View>
             </View>
         );
     }
+    _signOutAsync = async () => {
+        await AsyncStorage.clear();
+        this.props.navigation.navigate('Auth');
+    };
 }
+
+
+
 
 AccountScreen.navigationOptions = {
     title: 'Akun',
-  };
+};
 
 export default AccountScreen;

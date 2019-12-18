@@ -4,10 +4,9 @@ import {
     Text,
     Button,
     TextInput,
-    Alert,
+    AsyncStorage,
     Image,
     TouchableOpacity,
-    ImageBackground,
 } from 'react-native';
 
 let { StyleSheet } = React;
@@ -16,31 +15,39 @@ import styles from '../style/style';
 import HomeScreen from './HomeScreen';
 
 class LoginScreen extends Component {
-
+    
     state = { email: "", password: "" }
 
-    checkLogin() {
-        const { email, password } = this.state
-        if (email == 'admin' && password == 'admin') {
+    // checkLogin() {
+    //     const { email, password } = this.state
+    //     if (email == 'admin' && password == 'admin') {
 
-            // fetch('http://localhost:0000', {method: 'POST', body: `email=${email}&password=${password}`})
-            // .then (res => {
-            //     console.warn(res)
-            // })
+    //         // fetch('http://localhost:0000', {method: 'POST', body: `email=${email}&password=${password}`})
+    //         // .then (res => {
+    //         //     console.warn(res)
+    //         // })
 
-            this.props.navigation.navigate('Home')
-        } else {
-            Alert.alert('Cek lagi dong', 'Email/Password salah', [{
-                text: 'Kembali'
-            }])
-        }
+    //         this.props.navigation.navigate('Home')
+    //     } else {
+    //         Alert.alert('Cek lagi dong', 'Email/Password salah', [{
+    //             text: 'Kembali'
+    //         }])
+    //     }
+    // }
+
+    _signInAsync = async () => {
+        await AsyncStorage.setItem('userToken', 'abc');
+        this.props.navigation.navigate('App');
+      };
+    
+    static navgigationOptions = {
+        header: null
     }
-
     render() {
-        const { heading, input, container } = styles
+        const { headingCenter, input, container } = styles
         return (
 
-            <ImageBackground source={require('../assets/bg.jpg')} style={container}>
+            <View style={container}>
                 
                 <View style={{ alignItems: 'center', paddingBottom: 50 }}>
                     <Image source={require('../assets/wasd2.png')}
@@ -48,12 +55,12 @@ class LoginScreen extends Component {
                     />
                 </View>
 
-                <Text style={heading}>Silahkan masuk</Text>
-                <TextInput style={input} placeholder="Email" placeholderTextColor="#2F4F4F"  onChangeText={text => this.setState({ email: text })} />
-                <TextInput style={input} secureTextEntry={true} placeholderTextColor="#2F4F4F" placeholder="Password" onChangeText={text => this.setState({ password: text })} />
+                <Text style={headingCenter}>Silahkan masuk</Text>
+                <TextInput style={input} autoCapitalize="none" placeholder="Email" placeholderTextColor="#2F4F4F"  onChangeText={text => this.setState({ email: text })} />
+                <TextInput style={input} secureTextEntry={true} autoCapitalize="none" placeholderTextColor="#2F4F4F" placeholder="Password" onChangeText={text => this.setState({ password: text })} />
                 <View style={{marginLeft: 20, marginRight: 20}}>
                     <Button title="Masuk"
-                        onPress={_ => this.checkLogin()}/>
+                        onPress={_ => this._signInAsync()}/>
                 </View>
                 <View>
                     <Text numberOfLines={1} style={{ padding: 40 }}>
@@ -67,11 +74,13 @@ class LoginScreen extends Component {
                 </View>
                 
 
-            </ImageBackground>
+            </View>
 
 
         );
     }
 }
-
+LoginScreen.navigationOptions = {
+    header: null
+  };
 export default LoginScreen;
