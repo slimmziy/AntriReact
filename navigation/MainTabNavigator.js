@@ -16,8 +16,10 @@ import IsiMerchant from '../screens/IsiMerchant';
 import DetailMerchant from '../screens/DetailMerchant';
 import AmbilAntrian from '../screens/AmbilAntrianScreen';
 import LoginScreen from '../screens/LoginScreen';
+import RegisterScreen from '../screens/RegisterScreen';
 
 import styles from '../style/style'
+
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
@@ -84,7 +86,8 @@ SettingsStack.path = '';
 
 const AuthStack = createStackNavigator(
   {
-    Login: LoginScreen
+    Login: LoginScreen,
+    Register: RegisterScreen
   }
 )
 const tabNavigator = createBottomTabNavigator({

@@ -11,13 +11,12 @@ import {
 
 let { StyleSheet } = React;
 
-
-
 import styles from '../style/style';
+import HomeScreen from './HomeScreen';
 
-class LoginScreen extends Component {
+class RegisterScreen extends Component {
 
-    state = { email: "", password: "" }
+    state = { nama: "", email: "", password: "" }
 
     // checkLogin() {
     //     const { email, password } = this.state
@@ -56,11 +55,12 @@ class LoginScreen extends Component {
                     />
                 </View>
 
-                <Text style={headingCenter}>Silahkan masuk</Text>
+                <Text style={headingCenter}>Silahkan daftar</Text>
+                <TextInput style={input} placeholder="Nama" placeholderTextColor="#2F4F4F" onChangeText={text => this.setState({ nama: text })} />
                 <TextInput style={input} autoCapitalize="none" placeholder="Email" placeholderTextColor="#2F4F4F" onChangeText={text => this.setState({ email: text })} />
                 <TextInput style={input} secureTextEntry={true} autoCapitalize="none" placeholderTextColor="#2F4F4F" placeholder="Password" onChangeText={text => this.setState({ password: text })} />
                 <View style={{ marginLeft: 20, marginRight: 20 }}>
-                    <Button title="Masuk"
+                    <Button title="Daftar"
                         onPress={_ => this._signInAsync()} />
                 </View>
                 <View>
@@ -70,9 +70,8 @@ class LoginScreen extends Component {
                 </View>
                 <View style={styles.signupTextCont}>
 
-                    <Text style={styles.signupText}>Belum punya akun?</Text>
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate("Register")}><Text style={styles.signupButton}> Daftar</Text></TouchableOpacity>
-                    
+                    <Text style={styles.signupText}>Sudah punya akun?</Text>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate("Login")}><Text style={styles.signupButton}> Masuk</Text></TouchableOpacity>
                 </View>
 
 
@@ -82,7 +81,7 @@ class LoginScreen extends Component {
         );
     }
 }
-LoginScreen.navigationOptions = {
+RegisterScreen.navigationOptions = {
     header: null
 };
-export default LoginScreen;
+export default RegisterScreen;
