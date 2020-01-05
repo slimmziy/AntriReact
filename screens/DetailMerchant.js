@@ -6,8 +6,8 @@ import {
     TouchableOpacity
 } from 'react-native';
 
-import KartuIsi from '../components/Home/KartuIsi';
-import styles from '../style/style'
+import KartuDetail from '../components/Home/KartuDetail';
+import style from '../style/style'
 
 class DetailMerchant extends Component {
 
@@ -16,34 +16,32 @@ class DetailMerchant extends Component {
             <ScrollView style={{ backgroundColor: 'white', }}
             showsHorizontalScrollIndicator={false}>
                 
-                <TouchableOpacity onPress={() => this.props.navigation.navigate('AmbilAntrian')} style={{ alignItems: 'center', padding: 20 }}>
-                  <KartuIsi imageUri={require('../assets/wasd2.png')}
-                    lokasi="Nama Merchant"
-                    bagian="Lokasi Merchant" />
+                <TouchableOpacity onPress={() => this.props.navigation.navigate('AmbilAntrian')} style={style.cardSpace}>
+                  <KartuDetail imageUri={require('../assets/icon_sim.png')}
+                    lokasi="Pelayanan SIM"
+                    // bagian="Lokasi Merchant"
+                    />
                 </TouchableOpacity>
                 
-                <TouchableOpacity onPress={() => this.props.navigation.navigate('AmbilAntrian')} style={{ alignItems: 'center', padding: 20 }}>
-                  <KartuIsi imageUri={require('../assets/wasd2.png')}
-                    lokasi="Nama Merchant 2"
-                    bagian="Lokasi Merchant 2" />
+                <TouchableOpacity onPress={() => this.props.navigation.navigate('AmbilAntrian')} style={style.cardSpace}>
+                  <KartuDetail imageUri={require('../assets/icon_skck.png')}
+                    lokasi="Pelayanan SKCK"
+                    // bagian="Lokasi Merchant 2"
+                    />
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={() => this.props.navigation.navigate('AmbilAntrian')} style={{ alignItems: 'center', padding: 20 }}>
-                  <KartuIsi imageUri={require('../assets/wasd2.png')}
-                    lokasi="Nama Merchant 3"
-                    bagian="Lokasi Merchant 3" />
+                <TouchableOpacity onPress={() => this.props.navigation.navigate('AmbilAntrian')} style={style.cardSpace}>
+                  <KartuDetail imageUri={require('../assets/icon_tilang.jpg')}
+                    lokasi="Pelayanan Tilang"
+                    // bagian="Lokasi Merchant 3"
+                    />
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={() => this.props.navigation.navigate('AmbilAntrian')} style={{ alignItems: 'center', padding: 20 }}>
-                  <KartuIsi imageUri={require('../assets/wasd2.png')}
-                    lokasi="Nama Merchant 4"
-                    bagian="Lokasi Merchant 4" />
-                </TouchableOpacity>
-
-                <TouchableOpacity onPress={() => this.props.navigation.navigate('AmbilAntrian')} style={{ alignItems: 'center', padding: 20 }}>
-                  <KartuIsi imageUri={require('../assets/wasd2.png')}
-                    lokasi="Nama Merchant 5"
-                    bagian="Lokasi Merchant 5" />
+                <TouchableOpacity onPress={() => this.props.navigation.navigate('AmbilAntrian')} style={style.cardSpace}>
+                  <KartuDetail imageUri={require('../assets/icon_sidik_jari.jpg')}
+                    lokasi="Pelayanan Sidik Jari"
+                    // bagian="Lokasi Merchant 4"
+                    />
                 </TouchableOpacity>
 
             </ScrollView>
@@ -55,5 +53,5 @@ class DetailMerchant extends Component {
 export default DetailMerchant;
 
 DetailMerchant.navigationOptions = {
-    title: 'Detail Nama Merchant',
+    title: 'Polda Bali',
   };

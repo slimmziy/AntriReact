@@ -8,7 +8,6 @@ import {
   TouchableOpacity,
   View,
   FlatList,
-  ActivityIndicator
 } from "react-native";
 
 import styles from "../style/style";
@@ -89,7 +88,7 @@ class HomeScreen extends Component {
               keyExtractor={(item, index) => index}
             /> */}
 
-            <View style={{ height: 130, marginTop: 20 }}>
+            <View style={{ height: 130 }}>
               <ScrollView
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}
@@ -98,8 +97,9 @@ class HomeScreen extends Component {
                   onPress={() => this.props.navigation.navigate("IsiMerchant")}
                 >
                   <Category
-                    imageUri={require("../assets/wasd2.png")}
-                    name="Terakhir 1"
+                    imageUri={require("../assets/icon_sim.png")}
+                    categoryName="Pelayanan SIM"
+                    name="Polda Bali"
                   />
                 </TouchableOpacity>
 
@@ -107,8 +107,9 @@ class HomeScreen extends Component {
                   onPress={() => this.props.navigation.navigate("IsiMerchant")}
                 >
                   <Category
-                    imageUri={require("../assets/wasd2.png")}
-                    name="Terakhir 2"
+                    imageUri={require("../assets/icon_doctor.png")}
+                    categoryName="Dokter Umum"
+                    name="Dr. Ida Bagus Andy Pradnyana"
                   />
                 </TouchableOpacity>
 
@@ -116,8 +117,9 @@ class HomeScreen extends Component {
                   onPress={() => this.props.navigation.navigate("IsiMerchant")}
                 >
                   <Category
-                    imageUri={require("../assets/wasd2.png")}
-                    name="Terakhir 3"
+                    imageUri={require("../assets/icon_bpjs.png")}
+                    categoryName="BPJS Kesehatan"
+                    name=""
                   />
                 </TouchableOpacity>
 
@@ -125,8 +127,9 @@ class HomeScreen extends Component {
                   onPress={() => this.props.navigation.navigate("IsiMerchant")}
                 >
                   <Category
-                    imageUri={require("../assets/wasd2.png")}
-                    name="Terakhir 4"
+                    imageUri={require("../assets/icon_doctor.png")}
+                    categoryName="Dokter Gigi"
+                    name="Dr.I Gede Wiryanata Prianta"
                   />
                 </TouchableOpacity>
               </ScrollView>
@@ -158,18 +161,20 @@ class HomeScreen extends Component {
                         flex: 2.5,
                         height: null,
                         width: null,
-                        resizeMode: "cover",
+                        resizeMode: "contain",
                         borderRadius: 10
                       }}
-                      source={require("../assets/wasd2.png")}
+                      source={require("../assets/icon_doctor.png")}
                     />
                     <View style={{ flex: 1, paddingLeft: 10, paddingTop: 10 }}>
                       <Text style={styles.semiHeading}>
-                        Antrian paling populer
+                        Dokter Umum
+                      </Text>
+                      <Text style={styles.bold}>
+                        Dr.I Gede Made Andy Wiryatama
                       </Text>
                       <Text style={styles.normal}>
-                        Skidipappap Sawadihap Konkunhap
-                        Alahaphapljhdfsglhdflghdlfkhg
+                        Jl. Gunung Agung no.14, Denpasar Utara
                       </Text>
                     </View>
                   </View>
@@ -186,8 +191,9 @@ class HomeScreen extends Component {
                   onPress={() => this.props.navigation.navigate("IsiMerchant")}
                 >
                   <Category
-                    imageUri={require("../assets/wasd2.png")}
-                    name="Populer 1"
+                    imageUri={require("../assets/icon_bpjs.png")}
+                    categoryName="BPJS Kesehatan"
+                    name=""
                   />
                 </TouchableOpacity>
 
@@ -195,8 +201,9 @@ class HomeScreen extends Component {
                   onPress={() => this.props.navigation.navigate("IsiMerchant")}
                 >
                   <Category
-                    imageUri={require("../assets/wasd2.png")}
-                    name="Populer 2"
+                    imageUri={require("../assets/icon_doctor.png")}
+                    categoryName="Dokter Gigi"
+                    name="Dr.I Gede Wiryanata Prianta"
                   />
                 </TouchableOpacity>
 
@@ -204,8 +211,9 @@ class HomeScreen extends Component {
                   onPress={() => this.props.navigation.navigate("IsiMerchant")}
                 >
                   <Category
-                    imageUri={require("../assets/wasd2.png")}
-                    name="Populer 3"
+                    imageUri={require("../assets/icon_sim.png")}
+                    categoryName="Pelayanan SIM"
+                    name="Polda Bali"
                   />
                 </TouchableOpacity>
 
@@ -213,8 +221,9 @@ class HomeScreen extends Component {
                   onPress={() => this.props.navigation.navigate("IsiMerchant")}
                 >
                   <Category
-                    imageUri={require("../assets/wasd2.png")}
-                    name="Populer 4"
+                    imageUri={require("../assets/icon_doctor.png")}
+                    categoryName="Dokter Umum"
+                    name="Dr. Ida Bagus Andy Pradnyana"
                   />
                 </TouchableOpacity>
               </ScrollView>

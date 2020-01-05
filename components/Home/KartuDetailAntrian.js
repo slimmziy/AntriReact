@@ -17,13 +17,15 @@ class KartuIsi extends Component {
 
                     <View style={{ padding: 10 }}>
                         <Image source={this.props.imageUri}
-                            style={{ height: 100, width: 100, resizeMode: 'cover', borderRadius: 10 }} />
+                            style={{ height: 100, width: 100, resizeMode: 'contain', borderRadius: 10 }} />
                     </View>
 
-                    <View style={{ padding: 10 }}>
+                    <View style={{ flex: 1, paddingLeft: 10, paddingTop: 10 }}>
                         <Text style={styles.cardTextHeading}>{this.props.lokasi}</Text>
 
-                        <Text style={styles.cardTextNormal}>{this.props.bagian}</Text>
+                        <Text style={styles.cardTextBold}>{this.props.bagian}</Text>
+
+                        <Text style={styles.cardTextSmall}>{this.props.alamat}</Text>
 
                         <Text style={styles.cardTextNomor}>{this.props.current}</Text>
 

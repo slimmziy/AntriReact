@@ -13,13 +13,14 @@ class ListScreen extends Component {
 
     render() {
         return (
-            <View style={{ flex: 1, backgroundColor: 'white', paddingTop: 20 }}>
+            <View style={{ flex: 1, backgroundColor: 'white' }}>
 
                 <View style={{ alignItems: 'center', padding: 20 }}>
-                    <Kartu imageUri={require('../assets/wasd2.png')}
-                        lokasi="Lokasi antrian"
-                        bagian="Sub lokasi antrian"
-                        nomor="Antrian : 000" />
+                    <Kartu imageUri={require('../assets/icon_sim.png')}
+                        lokasi="Polda Bali"
+                        bagian="Pelayanan SIM"
+                        alamat="Jl. WR Supratman No.7, Sumerta Kauh, Kec. Denpasar Tim., Kota Denpasar, Bali 80236"
+                        nomor="Antrian : 02" />
                 </View>
 
                 <View >
@@ -28,12 +29,12 @@ class ListScreen extends Component {
                     </Text>
                 </View>
 
-                <View style={{ alignItems: 'center', padding: 20 }}>
+                {/* <View style={{ alignItems: 'center', padding: 20 }}>
                     <Kartu imageUri={require('../assets/wasd2.png')}
                         lokasi="Lokasi antrian"
                         bagian="Sub lokasi antrian"
-                        nomor="Antrian : 000" />
-                </View>
+                        nomor="Antrian : 00" />
+                </View> */}
             </View>
         );
     }

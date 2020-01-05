@@ -20,10 +20,10 @@ class KartuIsi extends Component {
                             style={{ height: 100, width: 100, resizeMode: 'contain', borderRadius: 10 }} />
                     </View>
 
-                    <View style={{ flex: 1, paddingLeft: 10, paddingTop: 10 }}>
+                    <View style={{ flex: 1, paddingLeft: 10, paddingTop: 10, alignSelf:"center", alignItems:"center" }}>
                         <Text style={styles.cardTextHeading}>{this.props.lokasi}</Text>
 
-                        <Text style={styles.cardTextNormal}>{this.props.bagian}</Text>
+                        {/* <Text style={styles.cardTextNormal}>{this.props.bagian}</Text> */}
 
                         <View style={{ position: 'absolute', right: 10, bottom: 10}}>
 

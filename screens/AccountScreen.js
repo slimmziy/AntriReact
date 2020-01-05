@@ -17,7 +17,7 @@ class AccountScreen extends Component {
     render() {
         return (
             <View style={{ flex: 1, backgroundColor: 'white', paddingTop: 20 }}>
-                <AccountData imageUri={require('../assets/wasd2.png')}
+                <AccountData imageUri={require('../assets/icon_account.png')}
                     Username="Nama pengguna"
                     Email="nama-pengguna@mailprovider.com"
                     Handphone="+62 345 678 90"

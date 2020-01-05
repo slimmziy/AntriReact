@@ -21,14 +21,15 @@ class AmbilAntrian extends Component {
                 showsHorizontalScrollIndicator={false}>
 
                 <TouchableOpacity onPress={() => this.props.navigation.navigate('AmbilAntrianScreen')} style={{ alignItems: 'center', padding: 20 }}>
-                    <KartuDetailAntrian imageUri={require('../assets/wasd2.png')}
-                        lokasi="Nama Merchant"
-                        bagian="Lokasi Merchant"
-                        current="00" />
+                    <KartuDetailAntrian imageUri={require('../assets/icon_sim.png')} 
+                        lokasi="Polda Bali"
+                        bagian="Pelayanan SIM"
+                        alamat="Jl. WR Supratman No.7, Sumerta Kauh, Kec. Denpasar Tim., Kota Denpasar, Bali 80236"
+                        current="01" />
                 </TouchableOpacity>
 
                 <View style={styles.alternativeLayoutButtonContainer}>
-                    <TouchableHighlight onPress={() => Alert.alert('Nomor antrian anda : 000')} underlayColor="white">
+                    <TouchableHighlight onPress={() => Alert.alert('Nomor antrian anda : 02')} underlayColor="white">
                         <View style={styles.logoutButton}>
                             <Text style={styles.buttonText}>Antri</Text>
                         </View>

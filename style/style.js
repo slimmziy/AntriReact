@@ -34,6 +34,11 @@ export default StyleSheet.create({
     fontSize: 14
   },
 
+  bold: {
+    fontSize: 14,
+    fontWeight: "700"
+  },
+
   input: {
     borderColor: "gray",
     borderWidth: 1,
@@ -46,14 +51,17 @@ export default StyleSheet.create({
 
   image: {
     height: 100,
-    width: 100
+    width: 200,
+    resizeMode: 'contain'
   },
 
   imageAccount: {
     height: 150,
     width: 150,
     paddingBottom: 50,
-    borderRadius: 100
+    borderRadius: 100,
+    resizeMode: "contain",
+
   },
 
   signupButton: {
@@ -95,16 +103,31 @@ export default StyleSheet.create({
 
   cardTextHeading: {
     fontSize: 20,
-    fontWeight: "700"
+    fontWeight: "700",
+    marginBottom: 10,
   },
   cardTextNormal: {
-    fontSize: 16
+    fontSize: 14
   },
-  cardTextNomor: {
-    fontSize: 26,
+  cardTextBold: {
+    fontSize: 14,
     fontWeight: "700"
   },
+  cardTextSmall: {
+    fontSize: 12,
+    flex: 1,
+  },
+  cardTextNomor: {
+    fontSize: 40,
+    fontWeight: "700",
+    marginTop: 10,
+  },
 
+  cardTextNomorList: {
+    fontSize: 20,
+    fontWeight: "700",
+    marginTop: 10,
+  },
   MainContainer: {
     justifyContent: "center",
     flex: 1,
@@ -116,5 +139,10 @@ export default StyleSheet.create({
     padding: 10,
     fontSize: 18,
     height: 44
+  },
+
+  cardSpace: {
+    alignItems: 'center',
+    padding: 10
   }
 });

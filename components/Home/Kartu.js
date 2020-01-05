@@ -19,12 +19,16 @@ class Kartu extends Component {
                     
                 </View>
                 <View >
-                    <Text style={styles.cardTextNormal}>{this.props.bagian}</Text>
+                    <Text style={styles.cardTextBold}>{this.props.bagian}</Text>
+                </View>
+
+                <View >
+                    <Text style={styles.cardTextNormal}>{this.props.alamat}</Text>
                 </View>
                 </View>
 
                 <View style={{ flex:1, paddingLeft: 40 }}>
-                    <Text style={styles.cardTextNomor}>{this.props.nomor}</Text>
+                    <Text style={styles.cardTextNomorList}>{this.props.nomor}</Text>
                 </View>
             </View>
         );
